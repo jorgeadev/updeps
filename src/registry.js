@@ -16,7 +16,7 @@ const NPM_REGISTRY = 'https://registry.npmjs.org';
  * @returns {Promise<Object>} registry metadata
  */
 export async function fetchPackageMetadata(packageName) {
-  const encodedName = encodeURIComponent(packageName).replace('%40', '@');
+  const encodedName = encodeURIComponent(packageName).replaceAll('%40', '@');
   const url = `${NPM_REGISTRY}/${encodedName}`;
 
   const response = await fetch(url, {
