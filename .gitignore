@@ -84,6 +84,8 @@ out
 
 # Nuxt.js build / generate output
 .nuxt
+
+# Astro build output
 dist
 
 # Gatsby files
@@ -125,6 +127,9 @@ dist
 
 # TernJS port file
 .tern-port
+
+# Astro generated types
+.astro/
 
 # Stores VSCode versions used for testing VSCode extensions
 .vscode-test

@@ -1,0 +1,175 @@
+---
+interface Option {
+  flag: string;
+  short: string;
+  description: string;
+}
+
+const options: Option[] = [
+  { flag: '--check',   short: '-c', description: 'Check only, don\'t update (exit 1 if outdated)' },
+  { flag: '--all',     short: '-a', description: 'Update all packages without prompting' },
+  { flag: '--major',   short: '',   description: 'Show only major updates' },
+  { flag: '--minor',   short: '',   description: 'Show only minor + patch updates' },
+  { flag: '--patch',   short: '',   description: 'Show only patch updates' },
+  { flag: '--dev',     short: '-D', description: 'Only devDependencies' },
+  { flag: '--prod',    short: '-P', description: 'Only production dependencies' },
+  { flag: '--json',    short: '',   description: 'Output as JSON' },
+  { flag: '--cwd',     short: '',   description: 'Set working directory' },
+  { flag: '--help',    short: '-h', description: 'Show help' },
+  { flag: '--version', short: '-v', description: 'Show version' },
+];
+
+const legends = [
+  { color: '#10B981', label: 'Patch', meaning: 'Safe, bug fixes only' },
+  { color: '#3B82F6', label: 'Minor', meaning: 'New features, backward-compatible' },
+  { color: '#EF4444', label: 'Major', meaning: 'May include breaking changes' },
+  { color: '#F97316', label: 'Warning', meaning: 'Deprecated package' },
+];
+---
+
+<section id="options" class="options-section">
+  <div class="container">
+    <h2 class="section-title">
+      <span class="gradient-text">CLI Options</span>
+    </h2>
+    <p class="section-subtitle">Fine-tune your update experience.</p>
+
+    <div class="options-table-wrapper">
+      <table class="options-table">
+        <thead>
+          <tr>
+            <th>Flag</th>
+            <th>Short</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          {options.map((opt) => (
+            <tr>
+              <td><code>{opt.flag}</code></td>
+              <td>{opt.short ? <code>{opt.short}</code> : <span class="muted">—</span>}</td>
+              <td>{opt.description}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+
+    <h3 class="legend-title">Color Legend</h3>
+    <div class="legend-grid">
+      {legends.map((l) => (
+        <div class="legend-item">
+          <span class="legend-dot" style={`background-color: ${l.color}`}></span>
+          <strong>{l.label}</strong>
+          <span class="muted"> — {l.meaning}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .options-section {
+    padding: 6rem 2rem;
+  }
+
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .section-title {
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 0.75rem;
+  }
+
+  .gradient-text {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .section-subtitle {
+    text-align: center;
+    color: var(--color-text-muted);
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+  }
+
+  .options-table-wrapper {
+    overflow-x: auto;
+    border-radius: 12px;
+    border: 1px solid rgba(124, 58, 237, 0.1);
+  }
+
+  .options-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+  }
+
+  .options-table thead {
+    background: var(--color-bg-alt);
+  }
+
+  .options-table th {
+    padding: 0.85rem 1.25rem;
+    text-align: left;
+    font-weight: 600;
+    color: var(--color-text-muted);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .options-table td {
+    padding: 0.75rem 1.25rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
+  }
+
+  .options-table tbody tr:hover {
+    background: rgba(124, 58, 237, 0.04);
+  }
+
+  .options-table code {
+    color: var(--color-secondary);
+    font-size: 0.85rem;
+  }
+
+  .muted {
+    color: var(--color-text-muted);
+  }
+
+  .legend-title {
+    margin-top: 3rem;
+    margin-bottom: 1.25rem;
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  .legend-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 0.75rem;
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    padding: 0.6rem 1rem;
+    background: var(--color-bg-alt);
+    border-radius: 8px;
+  }
+
+  .legend-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+</style>
