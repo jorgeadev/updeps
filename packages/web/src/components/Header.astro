@@ -1,0 +1,106 @@
+---
+---
+
+<header>
+  <nav>
+    <a href="/" class="logo">
+      <span class="logo-icon">📦</span>
+      <span class="logo-text">updeps</span>
+    </a>
+    <div class="nav-links">
+      <a href="#features">Features</a>
+      <a href="#usage">Usage</a>
+      <a href="#options">Options</a>
+      <a href="https://github.com/jorgeadev/updeps" target="_blank" rel="noopener noreferrer" class="nav-github">
+        GitHub
+      </a>
+    </div>
+  </nav>
+</header>
+
+<style>
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: rgba(15, 15, 26, 0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(124, 58, 237, 0.15);
+  }
+
+  nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-text);
+    text-decoration: none;
+  }
+
+  .logo:hover {
+    color: var(--color-primary);
+  }
+
+  .logo-icon {
+    font-size: 1.5rem;
+  }
+
+  .logo-text {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .nav-links a {
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover {
+    color: var(--color-text);
+  }
+
+  .nav-github {
+    padding: 0.4rem 1rem;
+    border: 1px solid rgba(124, 58, 237, 0.4);
+    border-radius: 6px;
+    transition: all 0.2s;
+  }
+
+  .nav-github:hover {
+    background: rgba(124, 58, 237, 0.15);
+    border-color: var(--color-primary);
+    color: var(--color-text) !important;
+  }
+
+  @media (max-width: 640px) {
+    .nav-links {
+      gap: 1rem;
+    }
+
+    .nav-links a:not(.nav-github) {
+      display: none;
+    }
+  }
+</style>

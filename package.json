@@ -1,54 +1,16 @@
 {
-  "name": "updeps",
+  "name": "updeps-monorepo",
   "version": "1.0.0",
-  "description": "🚀 The ultimate interactive npm dependency updater — auto-detect outdated packages, view breaking changes, and update with vibrant CLI experience",
-  "type": "module",
-  "main": "src/index.js",
-  "exports": {
-    ".": "./src/index.js"
-  },
-  "bin": {
-    "updeps": "bin/update.js"
-  },
-  "scripts": {
-    "start": "node bin/update.js",
-    "test": "node --test tests/**/*.test.js",
-    "lint": "eslint src/ tests/ bin/",
-    "lint:fix": "eslint src/ tests/ bin/ --fix"
-  },
-  "keywords": [
-    "npm",
-    "update",
-    "dependencies",
-    "outdated",
-    "cli",
-    "interactive",
-    "semver",
-    "package",
-    "upgrade",
-    "breaking-changes",
-    "updater"
-  ],
-  "author": "updeps",
+  "private": true,
+  "description": "🚀 The ultimate interactive npm dependency updater — monorepo",
   "license": "CC-BY-NC-4.0",
   "engines": {
     "node": ">=18.0.0"
   },
-  "files": [
-    "bin/",
-    "src/"
-  ],
-  "dependencies": {
-    "boxen": "^8.0.1",
-    "chalk": "^5.4.1",
-    "cli-table3": "^0.6.5",
-    "figures": "^6.1.0",
-    "gradient-string": "^3.0.0",
-    "inquirer": "^12.6.0",
-    "ora": "^8.2.0",
-    "semver": "^7.7.1"
-  },
-  "devDependencies": {
-    "eslint": "^9.24.0"
+  "scripts": {
+    "test": "pnpm --filter updeps test",
+    "lint": "pnpm --filter updeps lint",
+    "dev:web": "pnpm --filter updeps-web dev",
+    "build:web": "pnpm --filter updeps-web build"
   }
 }

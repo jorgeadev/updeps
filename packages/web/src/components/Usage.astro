@@ -1,0 +1,185 @@
+---
+---
+
+<section id="usage" class="usage">
+  <div class="container">
+    <h2 class="section-title">
+      <span class="gradient-text">Quick Start</span>
+    </h2>
+    <p class="section-subtitle">
+      Get up and running in seconds.
+    </p>
+
+    <div class="usage-grid">
+      <div class="usage-card">
+        <h3>📥 Install</h3>
+        <div class="code-block">
+          <div class="code-header">
+            <span class="code-dot red"></span>
+            <span class="code-dot yellow"></span>
+            <span class="code-dot green"></span>
+            <span class="code-title">Terminal</span>
+          </div>
+          <pre><code><span class="prompt">$</span> pnpm add -g updeps
+
+<span class="comment"># Or use directly with npx</span>
+<span class="prompt">$</span> npx updeps</code></pre>
+        </div>
+      </div>
+
+      <div class="usage-card">
+        <h3>🚀 Interactive Mode</h3>
+        <div class="code-block">
+          <div class="code-header">
+            <span class="code-dot red"></span>
+            <span class="code-dot yellow"></span>
+            <span class="code-dot green"></span>
+            <span class="code-title">Terminal</span>
+          </div>
+          <pre><code><span class="prompt">$</span> updeps
+
+<span class="comment"># Scans, displays, and lets you choose updates</span></code></pre>
+        </div>
+      </div>
+
+      <div class="usage-card">
+        <h3>🔍 Check Mode (CI/CD)</h3>
+        <div class="code-block">
+          <div class="code-header">
+            <span class="code-dot red"></span>
+            <span class="code-dot yellow"></span>
+            <span class="code-dot green"></span>
+            <span class="code-title">Terminal</span>
+          </div>
+          <pre><code><span class="prompt">$</span> updeps --check
+
+<span class="comment"># Exits with code 1 if outdated packages found</span></code></pre>
+        </div>
+      </div>
+
+      <div class="usage-card">
+        <h3>⚡ Update All</h3>
+        <div class="code-block">
+          <div class="code-header">
+            <span class="code-dot red"></span>
+            <span class="code-dot yellow"></span>
+            <span class="code-dot green"></span>
+            <span class="code-title">Terminal</span>
+          </div>
+          <pre><code><span class="prompt">$</span> updeps --all
+
+<span class="comment"># Updates all packages without prompting</span></code></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .usage {
+    padding: 6rem 2rem;
+    background: var(--color-bg-alt);
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-title {
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 0.75rem;
+  }
+
+  .gradient-text {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .section-subtitle {
+    text-align: center;
+    color: var(--color-text-muted);
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+  }
+
+  .usage-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .usage-card {
+    background: var(--color-bg);
+    border: 1px solid rgba(124, 58, 237, 0.1);
+    border-radius: 12px;
+    padding: 1.75rem;
+  }
+
+  .usage-card h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  .code-block {
+    background: #0d1117;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .code-header {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 0.6rem 0.85rem;
+    background: rgba(255, 255, 255, 0.04);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .code-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+  }
+
+  .code-dot.red { background: #ff5f57; }
+  .code-dot.yellow { background: #febc2e; }
+  .code-dot.green { background: #28c840; }
+
+  .code-title {
+    margin-left: 0.5rem;
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+  }
+
+  pre {
+    padding: 1rem;
+    overflow-x: auto;
+    margin: 0;
+  }
+
+  pre code {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    line-height: 1.7;
+    background: transparent;
+    padding: 0;
+    border-radius: 0;
+    color: var(--color-text);
+  }
+
+  .prompt {
+    color: var(--color-success);
+    user-select: none;
+  }
+
+  .comment {
+    color: var(--color-text-muted);
+  }
+</style>

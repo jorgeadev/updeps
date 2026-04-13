@@ -1,0 +1,164 @@
+---
+interface Feature {
+  icon: string;
+  title: string;
+  description: string;
+}
+
+const features: Feature[] = [
+  {
+    icon: '📦',
+    title: 'Smart Detection',
+    description: 'Scans dependencies, devDependencies, peerDependencies, and optionalDependencies automatically.',
+  },
+  {
+    icon: '🔍',
+    title: 'Registry Lookup',
+    description: 'Fetches latest versions from the npm registry with concurrent requests for speed.',
+  },
+  {
+    icon: '🏷️',
+    title: 'Semver Classification',
+    description: 'Color-coded badges for PATCH, MINOR, and MAJOR updates at a glance.',
+  },
+  {
+    icon: '⚠️',
+    title: 'Breaking Change Warnings',
+    description: 'Detects major version jumps and warns about potential breaking changes.',
+  },
+  {
+    icon: '🏥',
+    title: 'Health Score',
+    description: 'Rates each package\'s health based on maintainers, recency, docs, and more.',
+  },
+  {
+    icon: '🎨',
+    title: 'Vibrant Colors',
+    description: 'Rich, colorful output with gradients, badges, and themed styling.',
+  },
+  {
+    icon: '✅',
+    title: 'Interactive Selection',
+    description: 'Choose packages one-by-one, select all safe updates, or update everything.',
+  },
+  {
+    icon: '📋',
+    title: 'Multiple Strategies',
+    description: 'Safe-only, interactive, or update-all modes to fit your workflow.',
+  },
+  {
+    icon: '🔧',
+    title: 'Package Manager Support',
+    description: 'Detects and supports npm, pnpm, yarn, and bun out of the box.',
+  },
+  {
+    icon: '📊',
+    title: 'JSON Output',
+    description: 'Machine-readable output for CI/CD pipelines and automation.',
+  },
+  {
+    icon: '🎯',
+    title: 'Filters',
+    description: 'Filter by update type (major, minor, patch) or dependency type (dev, prod).',
+  },
+  {
+    icon: '⊘',
+    title: 'Deprecation Alerts',
+    description: 'Flags deprecated packages with clear warnings so you can plan migrations.',
+  },
+];
+---
+
+<section id="features" class="features">
+  <div class="container">
+    <h2 class="section-title">
+      <span class="gradient-text">Features</span>
+    </h2>
+    <p class="section-subtitle">
+      Everything you need to keep your dependencies healthy and up to date.
+    </p>
+    <div class="features-grid">
+      {features.map((feature) => (
+        <div class="feature-card">
+          <span class="feature-icon">{feature.icon}</span>
+          <h3>{feature.title}</h3>
+          <p>{feature.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .features {
+    padding: 6rem 2rem;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-title {
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 0.75rem;
+  }
+
+  .gradient-text {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .section-subtitle {
+    text-align: center;
+    color: var(--color-text-muted);
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .feature-card {
+    background: var(--color-bg-alt);
+    border: 1px solid rgba(124, 58, 237, 0.1);
+    border-radius: 12px;
+    padding: 1.75rem;
+    transition: all 0.25s ease;
+  }
+
+  .feature-card:hover {
+    border-color: rgba(124, 58, 237, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(124, 58, 237, 0.1);
+  }
+
+  .feature-icon {
+    font-size: 1.75rem;
+    display: block;
+    margin-bottom: 0.75rem;
+  }
+
+  .feature-card h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--color-text);
+  }
+
+  .feature-card p {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+  }
+</style>
