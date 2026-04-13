@@ -3,7 +3,7 @@
 > The ultimate interactive npm dependency updater — auto-detect outdated packages, view breaking changes, and update with a vibrant CLI experience.
 
 ![Node](https://img.shields.io/badge/node-%3E%3D18-brightgreen)
-![License](https://img.shields.io/badge/license-MIT-blue)
+![License](https://img.shields.io/badge/license-CC--BY--NC--4.0-blue)
 
 ---
 
@@ -28,7 +28,7 @@
 
 ```bash
 # Global install
-npm install -g updeps
+pnpm add -g updeps
 
 # Or use with npx (no install needed)
 npx updeps
@@ -147,11 +147,11 @@ await applyUpdates(process.cwd(), outdated);
 ## 🧪 Testing
 
 ```bash
-npm test
+pnpm test
 ```
 
 ---
 
 ## 📝 License
 
-MIT
+CC BY-NC 4.0 — [Creative Commons Attribution-NonCommercial 4.0 International](https://creativecommons.org/licenses/by-nc/4.0/)

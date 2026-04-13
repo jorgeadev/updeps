@@ -30,7 +30,7 @@
     "updater"
   ],
   "author": "updeps",
-  "license": "MIT",
+  "license": "CC-BY-NC-4.0",
   "engines": {
     "node": ">=18.0.0"
   },
